@@ -4,10 +4,11 @@ internal class Program
 {
     static void Main(string[] args)
     {
-        Task1();
-        Task2();
-        Task3();
-        Task4();
+        //Task1();
+        //Task2();
+        //Task3();
+        //Task4();
+        Task5();
     }
 
     public static void Task1()
@@ -172,6 +173,28 @@ internal class Program
         }
 
 
+    }
+
+
+    /*...Напишите программу, которая будет выполнять проверку чисел на четность.
+    Предложите два варианта решения поставленной задачи.*/
+
+    public static void Task5()
+    {
+        Console.WriteLine("Enter a number:");
+        int a = int.Parse(Console.ReadLine());
+        int b = 2;
+
+        if (a % b == 0)
+        {
+            Console.WriteLine("Entered number is even");
+        }
+
+        else
+        {
+            Console.WriteLine("Entered number is not even");
+        }
+       
     }
 
 }
