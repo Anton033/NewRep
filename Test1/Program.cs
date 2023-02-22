@@ -47,7 +47,15 @@ internal class Program
                 break;
 
             case "/":
-                Console.WriteLine($"The result is: {operand1} / {operand2} = " + (operand1 / operand2));
+                if (operand2 == 0)
+                {
+                    Console.WriteLine("ERROR");
+                }
+
+                else
+                {
+                    Console.WriteLine($"The result is: {operand1} / {operand2} = " + (operand1 / operand2));
+                }
                 break;
 
             case "-":
