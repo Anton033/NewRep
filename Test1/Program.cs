@@ -7,6 +7,7 @@ internal class Program
         Task1();
         Task2();
         Task3();
+        Task4();
     }
 
     public static void Task1()
@@ -27,8 +28,6 @@ internal class Program
     Выведите на экран результат выполнения арифметической операции.
     **В случае использования операции деления, организуйте проверку попытки деления на ноль.
     И если таковая имеется, то отмените выполнение арифметической операции и уведомите об ошибке пользователя. */
-
-
 
     public static void Task2()
     {
@@ -65,10 +64,12 @@ internal class Program
 
         }
     }
+
+
+
     /*Напишите программу определения, попадает ли указанное пользователем число от 0 до 100 в числовой промежуток[0 - 14][15 - 35][36 - 50][50 - 100].
     Если да, то укажите, в какой именно промежуток.
     Если пользователь указывает число, не входящее ни в один из имеющихся числовых промежутков, то выводится соответствующее сообщение. */
-
 
     public static void Task3()
     {
@@ -99,6 +100,70 @@ internal class Program
                 break;
 
         }
+    }
+
+
+    /*Напишите программу русско-английский переводчик.
+    Программа знает 10 слов о погоде.
+    Требуется, чтобы пользователь вводил слово на русском языке, а программа давала ему перевод этого слова на английском языке.
+    Если пользователь ввел слово, для которого отсутствует перевод, то следует вывести сообщение, что такого слова нет.*/
+
+    public static void Task4()
+    {
+        Console.WriteLine("Enter ru word");
+
+        string a = Console.ReadLine();
+
+
+        switch (a)
+        {
+            case "дождь":
+                Console.WriteLine($"{a} is rain in english");
+                break;
+
+            case "туман":
+                Console.WriteLine($"{a} is fog in english");
+                break;
+
+            case "ветер":
+                Console.WriteLine($"{a} is wind in english");
+                break;
+
+            case "солнечно":
+                Console.WriteLine($"{a} is sunny in english");
+                break;
+
+            case "пасмурно":
+                Console.WriteLine($"{a} is cloudly in english");
+                break;
+
+            case "торнадо":
+                Console.WriteLine($"{a} is tornado in english");
+                break;
+
+            case "закат":
+                Console.WriteLine($"{a} is sunset in english");
+                break;
+
+            case "восход":
+                Console.WriteLine($"{a} is sunrise in english");
+                break;
+
+            case "влажность":
+                Console.WriteLine($"{a} is humidity in english");
+                break;
+
+            case "давление":
+                Console.WriteLine($"{a} is pressure in english");
+                break;
+
+            default:
+                Console.WriteLine("Incorrect word");
+                break;
+
+        }
+
+
     }
 
 }
