@@ -9,6 +9,7 @@ internal class Program
         Task3();
         Task4();
         Task5();
+        Task6();
     }
 
     public static void Task1()
@@ -179,6 +180,8 @@ internal class Program
     /*...Напишите программу, которая будет выполнять проверку чисел на четность.
     Предложите два варианта решения поставленной задачи.*/
 
+
+    // Первый вариант
     public static void Task5()
     {
         Console.WriteLine("Enter a number:");
@@ -195,6 +198,27 @@ internal class Program
             Console.WriteLine("Entered number is not even");
         }
        
+    }
+
+    //Второй вариант
+    public static void Task6()
+    {
+        Console.WriteLine("Enter a number:");
+        int a = int.Parse(Console.ReadLine());
+        int remainder;
+        int action = Math.DivRem(a, 2, out remainder);
+
+
+        if (remainder == 0)
+        {
+            Console.WriteLine("Entered number is even");
+        }
+
+        else
+        {
+            Console.WriteLine("Entered number is not even");
+        }
+
     }
 
 }
