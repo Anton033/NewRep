@@ -4,7 +4,7 @@ internal class Program
 {
     static void Main(string[] args)
     {
-        //Task1();
+        HomeTask3.Task1();
        
     }
 
@@ -182,7 +182,7 @@ internal class Program
     //    {
     //        Console.WriteLine("Entered number is not even");
     //    }
-       
+
     //}
 
     ////Второй вариант
