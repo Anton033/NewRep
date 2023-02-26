@@ -206,6 +206,56 @@ internal class HomeTask3
             Console.WriteLine($"\n Average values are equal");
         }
     }
+
+
+//Дополнительное задание
+//4. Создайте массив из n случайных целых чисел и выведите его на экран.
+//Размер массива пусть задается с консоли и размер массива может быть больше 5 и меньше или равно 10.
+//Если n не удовлетворяет условию - выведите сообщение об этом. Если пользователь ввёл не подходящее число, то программа должна просить пользователя повторить ввод.
+//Создайте второй массив только из чётных элементов первого массива, если они там есть, и вывести его на экран.
+
+    public static void Task5()
+    {
+        Random random = new Random();
+
+        Console.Write("\nEnter the size of your array: ");
+        int size = int.Parse(Console.ReadLine()); //Задаем размерность массива
+
+        int[] numbers = new int[size];
+
+        if (size > 5 && size <= 10)
+        {
+            Console.WriteLine("\nYour array is: ");
+            for (int i = 0; i < numbers.Length; i++) //Заполняем массив если размер больше 5, но меньше либо равен 10
+            {
+                numbers[i] = (int)random.NextInt64(-10, 10);
+                Console.Write(numbers[i] + " ");
+            }
+        }
+        else
+        {
+            Console.WriteLine("\nTry again plz ");
+        }
+
+        int[] NewArray = new int[numbers.Length]; //Новый массив с таким же размером
+        int j = 0;
+
+        for (int i = 0; i < numbers.Length; i++) //Цикл сравнения элементов первого массива, если четный - записываем во второй массив
+        {
+            if (numbers[i] % 2 == 0)
+            {
+                NewArray[j] = numbers[i];
+                j++;
+            }
+        }
+
+        Console.WriteLine("\n New Array is: "); //Вывод нового массива
+        for (int i = 0; i < j; i++)
+        {
+            Console.Write(NewArray[i] + " ");
+        }
+    }
+    
 }
 
 
