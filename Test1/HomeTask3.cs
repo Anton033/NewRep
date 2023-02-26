@@ -32,7 +32,7 @@ internal class HomeTask3
         for (int i = 0; i < numbers.Length; i++)
         {
             numbers[i] = (int)random.NextInt64(-100, 100);
-            Console.WriteLine(numbers[i] + " ");
+            Console.Write(numbers[i] + " ");
 
         }
 
@@ -65,24 +65,24 @@ internal class HomeTask3
         int[] numbers = { 1, 2, 3, 4, 5 };
 
         Console.WriteLine("Enter a nubmer: ");
-        int candidate = int.Parse(Console.ReadLine());
+        int NumToDel = int.Parse(Console.ReadLine());
 
-        int BeforeDel = numbers.Length;
+        int BeforeDel = numbers.Length; // Сохраняем количество элементов массива до удаления
 
-        int[] NewArray = new int[BeforeDel];
+        int[] NewArray = new int[BeforeDel]; // Создаем новый массив той же длины, что и исходный
 
-        int j = 0;
+        int j = 0; // Индекс текущего элемента нового массива
 
         for (int i = 0; i < BeforeDel; i++)
         {
-            if (numbers[i] != candidate)
+            if (numbers[i] != NumToDel)
             {
                 NewArray[j] = numbers[i];
                 j++;
             }
         }
 
-        int AfterDel = j;
+        int AfterDel = j; // Сохраняем количество элементов нового массива после добавления
 
         if (BeforeDel == AfterDel)
         {
@@ -91,13 +91,16 @@ internal class HomeTask3
         else
         {
             Console.WriteLine("Array after deleting the number:");
-            for (int i=0; i < AfterDel; i++)
+            for (int i = 0; i < AfterDel; i++)
             {
                 Console.Write(NewArray[i] + " ");
             }
         }
 
     }
+
+
+
 }
 
 
