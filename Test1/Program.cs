@@ -5,7 +5,8 @@ internal class Program
     static void Main(string[] args)
     {
         HomeTask3.Task1();
-       
+        HomeTask3.Task2();
+
     }
 
     //public static void Task1()
@@ -203,5 +204,6 @@ internal class Program
     //    }
 
     //}
+    
 
 }
