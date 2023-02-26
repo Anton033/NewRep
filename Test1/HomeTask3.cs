@@ -22,11 +22,12 @@ using System;
 
 internal class HomeTask3
 {
-    //Task1
-    public static void Task1()
+    //Task0
+    public static void Task0()
     {
 
         int[] numbers = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+        Console.WriteLine("Your array is: ");
 
         for (int i = 0; i < numbers.Length; i++)
         {
@@ -55,8 +56,8 @@ internal class HomeTask3
     }
 
 
-    //Task2
-    public static void Task2()
+    //Task1
+    public static void Task1()
     {
 
 
@@ -98,13 +99,13 @@ internal class HomeTask3
     }
 
 
-    //Task3
-    public static void Task3()
+    //Task2
+    public static void Task2()
     {
 
         Random random = new Random();
 
-        Console.Write("\nEnter the size of your array: "); 
+        Console.WriteLine("\nEnter the size of your array: ");
         int size = int.Parse(Console.ReadLine()); //Задаем размерность массива
 
         int[] numbers = new int[size];
@@ -147,8 +148,8 @@ internal class HomeTask3
     }
 
 
-    //Task4
-    public static void Task4()
+    //Task3
+    public static void Task3()
     {
         Random random = new Random();
 
@@ -174,7 +175,7 @@ internal class HomeTask3
 
         int[] numbers2 = new int[5];
 
-        Console.WriteLine("\nYour 2nd array is: "); 
+        Console.WriteLine("\nYour 2nd array is: ");
         for (int i = 0; i < numbers1.Length; i++) // Заполняем второй массив
         {
             numbers1[i] = (int)random.NextInt64(-10, 10);
@@ -208,13 +209,13 @@ internal class HomeTask3
     }
 
 
-//Дополнительное задание
-//4. Создайте массив из n случайных целых чисел и выведите его на экран.
-//Размер массива пусть задается с консоли и размер массива может быть больше 5 и меньше или равно 10.
-//Если n не удовлетворяет условию - выведите сообщение об этом. Если пользователь ввёл не подходящее число, то программа должна просить пользователя повторить ввод.
-//Создайте второй массив только из чётных элементов первого массива, если они там есть, и вывести его на экран.
+    //Дополнительное задание
+    //4. Создайте массив из n случайных целых чисел и выведите его на экран.
+    //Размер массива пусть задается с консоли и размер массива может быть больше 5 и меньше или равно 10.
+    //Если n не удовлетворяет условию - выведите сообщение об этом. Если пользователь ввёл не подходящее число, то программа должна просить пользователя повторить ввод.
+    //Создайте второй массив только из чётных элементов первого массива, если они там есть, и вывести его на экран.
 
-    public static void Task5()
+    public static void Task4()
     {
         Random random = new Random();
 
@@ -255,7 +256,48 @@ internal class HomeTask3
             Console.Write(NewArray[i] + " ");
         }
     }
-    
+
+
+
+    //5. Создайте массив и заполните массив.
+    //Выведите массив на экран в строку.
+    //Замените каждый элемент с нечётным индексом на ноль.
+    //Снова выведете массив на экран на отдельной строке.
+
+    public static void Task5()
+    {
+        Random random = new Random();
+
+        int[] numbers = new int[5];
+
+
+        Console.WriteLine("\n Your default array is: ");
+        for (int i = 0; i < numbers.Length; i++)  // Заполняем первый массив
+        {
+            numbers[i] = (int)random.NextInt64(-10, 10);
+            Console.Write(numbers[i] + " ");
+
+        }
+
+        for (int i = 0; i < numbers.Length; i++) // Цикл с проверкой остатка от деления индекса на 2
+        {
+            if (i % 2 != 0)
+            {
+                numbers[i] = 0;
+            }
+           
+        }
+
+        Console.WriteLine("\nYour new array is: ");
+
+        for (int i = 0; i < numbers.Length; i++) //Вывод нового массива
+        {
+            Console.Write(numbers[i] + " ");
+        }
+            
+
+
+    }
 }
 
 
