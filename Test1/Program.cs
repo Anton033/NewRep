@@ -6,6 +6,7 @@ internal class Program
     {
         HomeTask3.Task1();
         HomeTask3.Task2();
+        HomeTask3.Task3();
 
     }
 

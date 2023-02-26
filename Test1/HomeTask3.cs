@@ -25,19 +25,16 @@ internal class HomeTask3
     //Task1
     public static void Task1()
     {
-        Random random = new Random();
 
-        int[] numbers = new int[20];
+        int[] numbers = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
 
         for (int i = 0; i < numbers.Length; i++)
         {
-            numbers[i] = (int)random.NextInt64(-100, 100);
             Console.Write(numbers[i] + " ");
-
         }
 
 
-        Console.WriteLine("Enter your number: ");
+        Console.WriteLine("\nEnter your number: ");
         int variable = int.Parse(Console.ReadLine());
         bool isFound = false;
 
@@ -99,9 +96,49 @@ internal class HomeTask3
 
     }
 
+    //Task3
+    public static void Task3()
+    {
+
+        Random random = new Random();
+
+        int[] numbers = new int[4];
+
+        for (int i = 0; i < numbers.Length; i++)
+        {
+            numbers[i] = (int)random.NextInt64(-100, 100);
+            Console.Write(numbers[i] + " ");
+        }
+
+        int MaxNum = numbers[0];
+        int MinNum = numbers[0];
+
+        for (int i = 0; i < numbers.Length; i++) //Цикл сравнения элементов
+        {
+            if (MaxNum < numbers[i])
+            {
+                MaxNum = numbers[i];
+            }
+            if (MinNum > numbers[i])
+            {
+                MinNum = numbers[i];
+            }
+        }
+
+        double Sum = 0;
+        double AvNum = numbers[0];
+
+        for (int i = 0; i < numbers.Length; i++) //Цикл наъождения суммы всех элементов
+        {
+            Sum = Sum + numbers[i];
+        }
+
+        AvNum = Sum / numbers.Length;
 
 
+            Console.WriteLine($"\nMax element is {MaxNum}, Min element is {MinNum}, Average of all elements is {AvNum}");
+
+    }
 }
-
 
 
