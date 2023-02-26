@@ -38,7 +38,7 @@ internal class HomeTask3
         int variable = int.Parse(Console.ReadLine());
         bool isFound = false;
 
-        for (int i = 0; i < numbers.Length; i++)
+        for (int i = 0; i < numbers.Length; i++) //Сравнивем каждый элемент с введенным значением, если нашли - выводим 
         {
 
             if (variable == numbers[i])
@@ -54,6 +54,7 @@ internal class HomeTask3
         }
     }
 
+
     //Task2
     public static void Task2()
     {
@@ -61,7 +62,7 @@ internal class HomeTask3
 
         int[] numbers = { 1, 2, 3, 4, 5 };
 
-        Console.WriteLine("Enter a nubmer: ");
+        Console.WriteLine("\nEnter a nubmer: ");
         int NumToDel = int.Parse(Console.ReadLine());
 
         int BeforeDel = numbers.Length; // Сохраняем количество элементов массива до удаления
@@ -96,15 +97,20 @@ internal class HomeTask3
 
     }
 
+
     //Task3
     public static void Task3()
     {
 
         Random random = new Random();
 
-        int[] numbers = new int[4];
+        Console.Write("\nEnter the size of your array: "); 
+        int size = int.Parse(Console.ReadLine()); //Задаем размерность массива
 
-        for (int i = 0; i < numbers.Length; i++)
+        int[] numbers = new int[size];
+
+        Console.WriteLine("\nYour array is: ");
+        for (int i = 0; i < numbers.Length; i++) //Заполняем массив
         {
             numbers[i] = (int)random.NextInt64(-100, 100);
             Console.Write(numbers[i] + " ");
@@ -126,7 +132,7 @@ internal class HomeTask3
         }
 
         double Sum = 0;
-        double AvNum = numbers[0];
+        double AvNum;
 
         for (int i = 0; i < numbers.Length; i++) //Цикл наъождения суммы всех элементов
         {
@@ -136,8 +142,69 @@ internal class HomeTask3
         AvNum = Sum / numbers.Length;
 
 
-            Console.WriteLine($"\nMax element is {MaxNum}, Min element is {MinNum}, Average of all elements is {AvNum}");
+        Console.WriteLine($"\nMax element is {MaxNum}, Min element is {MinNum}, Average of all elements is {AvNum}");
 
+    }
+
+
+    //Task4
+    public static void Task4()
+    {
+        Random random = new Random();
+
+        int[] numbers1 = new int[5];
+
+        Console.WriteLine("\nYour 1st array is: ");
+        for (int i = 0; i < numbers1.Length; i++)  // Заполняем первый массив
+        {
+            numbers1[i] = (int)random.NextInt64(-10, 10);
+            Console.Write(numbers1[i] + " ");
+        }
+
+        double SumNum1 = 0;
+        double AvNum1;
+
+        for (int i = 0; i < numbers1.Length; i++) // Находим сумму всех элементов для первого массива
+        {
+            SumNum1 = SumNum1 + numbers1[i];
+        }
+
+        AvNum1 = SumNum1 / numbers1.Length;   // Вычисляем среднее значение первого массива
+        Console.WriteLine($"\nAverage value for 1st array is: {AvNum1}");
+
+        int[] numbers2 = new int[5];
+
+        Console.WriteLine("\nYour 2nd array is: "); 
+        for (int i = 0; i < numbers1.Length; i++) // Заполняем второй массив
+        {
+            numbers1[i] = (int)random.NextInt64(-10, 10);
+            Console.Write(numbers1[i] + " ");
+        }
+
+        double SumNum2 = 0;
+        double AvNum2;
+
+        for (int i = 0; i < numbers2.Length; i++) // Находим сумму всех элементов для второго массива
+        {
+            SumNum2 = SumNum2 + numbers2[i];
+        }
+
+        AvNum2 = SumNum2 / numbers2.Length;  // Вычисляем среднее значение второго массива
+        Console.WriteLine($"\nAverage value for 1st array is: {AvNum2}");
+
+        if (AvNum1 > AvNum2) //Сравниваем
+        {
+            Console.WriteLine($"\n Average value is bigger for 1st array");
+        }
+
+        else if (AvNum2 > AvNum1)
+        {
+            Console.WriteLine($"\n Average value is bigger for 2nd array");
+        }
+        else
+        {
+            Console.WriteLine($"\n Average values are equal");
+        }
     }
 }
 
