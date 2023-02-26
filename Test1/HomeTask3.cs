@@ -294,10 +294,33 @@ internal class HomeTask3
         {
             Console.Write(numbers[i] + " ");
         }
-            
-
-
     }
+
+    //Создайте массив строк.Заполните его произвольными именами людей.
+    //Отсортируйте массив.
+    //Результат выведите на консоль.
+
+    public static void Task6()
+    {
+        string[] names = { "Anton", "Tom", "Bob", "James", "Alex", "Frank", "Paul", "Alexander", };
+        Console.WriteLine("\nHere are the names: ");
+
+        foreach (string i in names) //Исходный массив 
+        {
+            Console.Write(i + " ");
+        }
+
+        Array.Sort(names); //Сортировка 
+
+        Console.WriteLine("\nHere are the sorted names: ");
+        foreach (string i in names) //Отсортированный массив 
+        {
+            Console.Write(i + " ");
+        }
+    }
+
+
+
 }
 
 
