@@ -22,10 +22,8 @@ using System;
 
 internal class HomeTask3
 {
-    //Task0
     public static void Task0()
     {
-
         int[] numbers = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
         Console.WriteLine("Your array is: ");
 
@@ -34,20 +32,17 @@ internal class HomeTask3
             Console.Write(numbers[i] + " ");
         }
 
-
         Console.WriteLine("\nEnter your number: ");
         int variable = int.Parse(Console.ReadLine());
         bool isFound = false;
 
         for (int i = 0; i < numbers.Length; i++) //Сравнивем каждый элемент с введенным значением, если нашли - выводим 
         {
-
             if (variable == numbers[i])
             {
                 isFound = true;
                 Console.WriteLine("This number exists in the array");
             }
-
         }
         if (!isFound)
         {
@@ -55,12 +50,9 @@ internal class HomeTask3
         }
     }
 
-
-    //Task1
+    
     public static void Task1()
     {
-
-
         int[] numbers = { 1, 2, 3, 4, 5 };
 
         Console.WriteLine("\nEnter a nubmer: ");
@@ -99,10 +91,8 @@ internal class HomeTask3
     }
 
 
-    //Task2
     public static void Task2()
     {
-
         Random random = new Random();
 
         Console.WriteLine("\nEnter the size of your array: ");
@@ -141,14 +131,10 @@ internal class HomeTask3
         }
 
         AvNum = Sum / numbers.Length;
-
-
         Console.WriteLine($"\nMax element is {MaxNum}, Min element is {MinNum}, Average of all elements is {AvNum}");
-
     }
 
 
-    //Task3
     public static void Task3()
     {
         Random random = new Random();
@@ -197,7 +183,6 @@ internal class HomeTask3
         {
             Console.WriteLine($"\n Average value is bigger for 1st array");
         }
-
         else if (AvNum2 > AvNum1)
         {
             Console.WriteLine($"\n Average value is bigger for 2nd array");
@@ -224,7 +209,7 @@ internal class HomeTask3
 
         int[] numbers = new int[size];
 
-        if (size > 5 && size <= 10)
+        if ((size > 5) && (size <= 10))
         {
             Console.WriteLine("\nYour array is: ");
             for (int i = 0; i < numbers.Length; i++) //Заполняем массив если размер больше 5, но меньше либо равен 10
@@ -296,7 +281,7 @@ internal class HomeTask3
         }
     }
 
-    //Создайте массив строк.Заполните его произвольными именами людей.
+    //6. Создайте массив строк.Заполните его произвольными именами людей.
     //Отсортируйте массив.
     //Результат выведите на консоль.
 
@@ -318,9 +303,6 @@ internal class HomeTask3
             Console.Write(i + " ");
         }
     }
-
-
-
 }
 
 
