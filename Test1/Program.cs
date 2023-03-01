@@ -1,10 +1,12 @@
 ﻿using System;
 
+using System.Text.RegularExpressions;
+
 internal class Program
 {
 	static void Main(string[] args)
 	{
-		HomeTask4.Task0();
+		HomeTask4.Task1();
 		//HomeTask3.Task1();
 		//HomeTask3.Task2();
 		//HomeTask3.Task3();
