@@ -21,4 +21,25 @@ internal class HomeTask4
 		}
 		Console.WriteLine($"The result is: \n{replace}");
 	}
+
+	//Используя метод вывода значения в консоль, выполните конкатенацию слов и выведите на экран следующую фразу:
+	//Welcome to the TMS lesons.
+	//Каждое слово должно быть записано отдельно и взято в кавычки, например "Welcome". Не забывайте о пробелах после каждого слова
+
+	public static void Task2()
+	{
+		string word1 = "\"Welcome\"";
+		string word2 = "\"to\"";
+		string word3 = "\"the\"";
+		string word4 = "\"TMS\"";
+		string word5 = "\"lesons.\"";
+
+		string[] array = new string[] { word1, word2, word3, word4, word5, };
+
+		string AllWords = string.Join(" ", array);
+
+		AllWords = AllWords.Replace("\"", "");
+
+		Console.Write(AllWords);
+	}
 }
