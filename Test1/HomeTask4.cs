@@ -1,5 +1,6 @@
 ﻿
 using System;
+using System.Text;
 
 internal class HomeTask4
 {
@@ -85,5 +86,57 @@ internal class HomeTask4
 		substring2 = substring2.Remove(substring2.Length - 1) + "?";
 		Console.WriteLine();
 		Console.WriteLine(substring2);
+	}
+
+	//Написать программу со следующим функционалом: На вход передать строку(будем считать, что это номер документа). Номер документа имеет формат xxxx-yyy-xxxx-yyy-xyxy, где x — это число, а y — это буква.
+	//Вывести на экран в одну строку два первых блока по 4 цифры.
+	//Вывести на экран номер документа, но блоки из трех букв заменить на*** (каждая буква заменятся на*).
+	//Вывести на экран только одни буквы из номера документа в формате yyy/yyy/y/y в нижнем регистре.
+	//Вывести на экран буквы из номера документа в формате "Letters:yyy/yyy/y/y" в верхнем регистре(реализовать с помощью класса StringBuilder).
+	//Проверить содержит ли номер документа последовательность abc и вывети сообщение содержит или нет(причем, abc и ABC считается одинаковой последовательностью).
+	//Проверить начинается ли номер документа с последовательности
+
+	public static void Task5()
+	{
+		string documentNumber = "1234-abc-5678-XYZ-xyZw";
+
+		// Выводим два первых блока по 4 цифры
+		Console.WriteLine(documentNumber.Substring(0, 4) + "-" + documentNumber.Substring(9, 4));
+
+		// Заменяем блоки из трех букв на ***
+		//string replaceLetters = documentNumber;
+		//for (int i = 0; i < replaceLetters.Length; i++)
+		//{
+		//	if (i == '-')
+		//	{
+		//		replaceLetters = replaceLetters.Remove(i, 3).Insert(i, "***");
+		//	}
+		//}
+		//Console.WriteLine(replaceLetters);
+
+		// Выводим только буквы в формате yyy/yyy/y/y
+		string lettersOnly = "";
+		for (int i = 0; i < documentNumber.Length; i++)
+		{
+			if (Char.IsLetter(documentNumber[i]))
+			{
+				lettersOnly += documentNumber[i];
+			}
+		}
+		Console.WriteLine(lettersOnly.Substring(0, 3) + "/" + lettersOnly.Substring(3, 3) + "/" + lettersOnly.Substring(6, 1) + "/" + lettersOnly.Substring(7, 1));
+
+		// Выводим буквы в формате "Letters:yyy/yyy/y/y" в верхнем регистре
+		StringBuilder sb = new StringBuilder("Letters:");
+		for (int i = 0; i < documentNumber.Length; i++)
+		{
+			if (Char.IsLetter(documentNumber[i]))
+			{
+				sb.Append(Char.ToUpper(documentNumber[i]));
+			}
+			else
+			{
+				sb.Append(documentNumber[i]);
+			}
+		}
 	}
 }
