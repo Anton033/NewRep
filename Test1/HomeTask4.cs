@@ -43,7 +43,7 @@ internal class HomeTask4
 		AllWords = AllWords.Replace("\"", "");
 		Console.WriteLine();
 		Console.WriteLine(AllWords);
-		
+
 	}
 
 	//Дана строка: teamwithsomeofexcersicesabcwanttomakeitbetter.
@@ -52,7 +52,7 @@ internal class HomeTask4
 
 	public static void Task3()
 	{
-		
+
 		string text = "teamwithsomeofexcersicesabcwanttomakeitbetter.";
 
 		string searchABC = "abc";
@@ -64,6 +64,26 @@ internal class HomeTask4
 		string substring2 = text.Substring(indexOfABC + 3);
 		Console.WriteLine();
 		Console.WriteLine(substring1 + " " + substring2);
+
+	}
+
+	//Дана строка: Плохой день.
+	//Необходимо с помощью метода substring удалить слово "плохой". После чего необходимо используя команду insert создать строку со значением: Хороший день!!!!!!!!!.
+	//Заменить последний "!" на "?"
+
+	public static void Task4()
+	{
+		string text = "Плохой день";
+		string search = "Плохой";
+
+		int index = text.IndexOf(search);
+
+		string substring1 = text.Substring(index + 6);
+
+		string substring2 = substring1.Insert(index, "Хороший") + "!!!!!!!!!";
 		
+		substring2 = substring2.Remove(substring2.Length - 1) + "?";
+		Console.WriteLine();
+		Console.WriteLine(substring2);
 	}
 }
