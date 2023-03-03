@@ -8,6 +8,7 @@ internal class Program
 	{
 		HomeTask4.Task1();
 		HomeTask4.Task2();
+		HomeTask4.Task3();
 
 
 	}

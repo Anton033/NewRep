@@ -1,4 +1,6 @@
 ﻿
+using System;
+
 internal class HomeTask4
 {
 
@@ -39,7 +41,29 @@ internal class HomeTask4
 		string AllWords = string.Join(" ", array);
 
 		AllWords = AllWords.Replace("\"", "");
+		Console.WriteLine();
+		Console.WriteLine(AllWords);
+		
+	}
 
-		Console.Write(AllWords);
+	//Дана строка: teamwithsomeofexcersicesabcwanttomakeitbetter.
+	//Необходимо найти в данной строке "abc", записав всё что до этих символов в первую переменную, а также всё, что после них во вторую.
+	//Результат вывести в консоль.
+
+	public static void Task3()
+	{
+		
+		string text = "teamwithsomeofexcersicesabcwanttomakeitbetter.";
+
+		string searchABC = "abc";
+
+		int indexOfABC = text.IndexOf(searchABC);
+
+		string substring1 = text.Substring(0, indexOfABC);
+
+		string substring2 = text.Substring(indexOfABC + 3);
+		Console.WriteLine();
+		Console.WriteLine(substring1 + " " + substring2);
+		
 	}
 }
