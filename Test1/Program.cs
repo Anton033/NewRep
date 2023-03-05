@@ -1,5 +1,7 @@
 ﻿using System;
 
+using System.Text.RegularExpressions;
+
 internal class Program
 {
     static void Main(string[] args)
@@ -198,17 +200,5 @@ internal class Program
     //    int nubmer = int.Parse(Console.ReadLine());
     //    int remainder;
     //    int action = Math.DivRem(nubmer, 2, out remainder);
-
-    //    if (remainder == 0)
-    //    {
-    //        Console.WriteLine("Entered number is even");
-    //    }
-    //    else
-    //    {
-    //        Console.WriteLine("Entered number is not even");
-    //    }
-
-    //}
-    
 
 }
