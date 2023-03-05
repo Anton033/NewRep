@@ -10,6 +10,7 @@ namespace Test1.Classes
     {
         static void Main()
 		{
+			//Task 1
 			Phone phone1 = new Phone("+48123123123", "iPhone 13", 154);
 			Phone phone2 = new Phone("+48124124124", "iPhone 6");
 			Phone phone3 = new Phone();
@@ -26,6 +27,36 @@ namespace Test1.Classes
 
 			Console.WriteLine("\nPhone 3:");
 			phone3.Getinfo();
+
+
+			//Task2
+			CreditCard card1 = new CreditCard("4444-3333-2222-1111-0000", 1000);
+			CreditCard card2 = new CreditCard("5555-0000-2222-1111-0000", 100);
+			CreditCard card3 = new CreditCard("0000-1111-2222-1111-0000", 13000);
+
+			Console.WriteLine("\nCard1:");
+			card1.getInfo();
+
+			Console.WriteLine("\nCard2:");
+			card2.getInfo();
+
+			Console.WriteLine("\nCard3:");
+			card3.getInfo();
+
+			card1.addMoney(10);
+
+			card2.addMoney(200);
+
+			card3.moneyWithdrawal(10000);
+
+			Console.WriteLine("\nCard1 after operation with balance:");
+			card1.getInfo();
+
+			Console.WriteLine("\nCard1 after operation with balance:");
+			card2.getInfo();
+
+			Console.WriteLine("\nCard1 after operation with balance:");
+			card3.getInfo();
 		}
 
     }
