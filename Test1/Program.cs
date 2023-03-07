@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -8,9 +9,9 @@ namespace Test1.Classes
 {
     internal class Program
     {
-        static void Main()
+		static void Main()
 		{
-			//Task 1
+			//Task1
 			Phone phone1 = new Phone("+48123123123", "iPhone 13", 154);
 			Phone phone2 = new Phone("+48124124124", "iPhone 6");
 			Phone phone3 = new Phone();
@@ -57,7 +58,23 @@ namespace Test1.Classes
 
 			Console.WriteLine("\nCard1 after operation with balance:");
 			card3.getInfo();
-		}
 
-    }
+
+			//Task3
+			CashMachine atm1 = new CashMachine(100, 20, 1);
+			atm1.getInfo();
+
+			Console.WriteLine("\nAfter adding money: ");
+			atm1.addMoney(5, 2, 3);
+
+			atm1.getInfo();
+
+			Console.WriteLine("\nAfter withdrawing money: ");
+
+			atm1.withdrawMoney(1220);
+
+			atm1.getInfo();
+
+		}
+	}
 }
