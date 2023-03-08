@@ -5,12 +5,13 @@ using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Test1.Classes
+namespace Test1.Classes;
+using System.Text.RegularExpressions;
+
+internal class Program
 {
-    internal class Program
-    {
-		static void Main()
-		{
+	static void Main()
+	{
 			//Task1
 			Phone phone1 = new Phone("+48123123123", "iPhone 13", 154);
 			Phone phone2 = new Phone("+48124124124", "iPhone 6");
@@ -74,7 +75,5 @@ namespace Test1.Classes
 			atm1.withdrawMoney(1220);
 
 			atm1.getInfo();
-
-		}
 	}
 }
