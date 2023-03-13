@@ -76,6 +76,7 @@ internal class Program
 
 		//atm1.getInfo();
 
+		//Task2
 		Patient p1 = new Patient(3, "Tom");
 		Patient p2 = new Patient(1, "Jack");
 		Patient p3 = new Patient(2, "Vasily");
@@ -88,5 +89,19 @@ internal class Program
 
 		Doc doc3 = p3.Plan();
 		doc3.Heal();
+
+		//Task1
+		equilateralTriangle triangle1 = new equilateralTriangle(5, 5, 5);
+		Console.WriteLine(triangle1.GetSq());
+
+		StraightTriangle triangle3 = new StraightTriangle(6, 3, 4);
+		Console.WriteLine(triangle3.GetSq());
+
+		Triangle triangle4 = TriangleBuilder.CreateTriangle(1, 1, 3);
+
+		Square rectangle1 = new Square(2);
+		Rectangle rectangle2 = new Rectangle(3, 4);
+		Console.WriteLine(rectangle1.GetSquare());
+		Console.WriteLine(rectangle2.GetSquare());
 	}
 }

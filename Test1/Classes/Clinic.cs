@@ -57,33 +57,37 @@ namespace Test1.Classes
 			this.code = code;
 		}
 
+		
+	}
+	
+	public class Patient 
+	{
+		public string patientName;
+		public TreatmentPlan plan;
+
+		public Patient(int code, string patientName)
+		{
+			this.patientName = patientName;
+			this.plan = new TreatmentPlan(code);
+		}
+
 		public Doc Plan()
 		{
-			if (code == 1)
+			if (plan.code == 1)
 			{
-				Console.WriteLine($"Your code nubmer is: {code}");
+				Console.WriteLine($"Your code nubmer is: {plan.code}");
 				return new Surger();
 			}
-			else if (code == 2)
+			else if (this.plan.code == 2)
 			{
-				Console.WriteLine($"Your code nubmer is: {code}");
+				Console.WriteLine($"Your code nubmer is: {plan.code}");
 				return new Therapist();
 			}
 			else
 			{
-				Console.WriteLine($"Your code nubmer is: {code}");
+				Console.WriteLine($"Your code nubmer is: {plan.code}");
 				return new Dentist();
 			}
-		}
-	}
-
-	public class Patient : TreatmentPlan
-	{
-		public string patientName;
-
-		public Patient(int code, string patientName) : base(code)
-		{
-			this.patientName = patientName;
 		}
 	}
 
