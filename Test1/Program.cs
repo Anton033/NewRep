@@ -115,5 +115,12 @@ internal class Program
 		Console.WriteLine($"Destination: {myBus.Destination}");
 		Console.WriteLine($"Departure Time: {myBus.DepartureTime}");
 		Console.WriteLine($"NumberOfSeats: {myBus.NumberOfSeats}");
+
+		TrolleyBuss trolleyBuss = new TrolleyBuss();
+		Console.WriteLine(trolleyBuss.GetType());
+
+		Tram tram = new Tram();
+		Console.WriteLine(tram.GetType());
+
 	}
 }
