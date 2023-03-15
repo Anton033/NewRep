@@ -103,5 +103,17 @@ internal class Program
 		Rectangle rectangle2 = new Rectangle(3, 4);
 		Console.WriteLine(rectangle1.GetSquare());
 		Console.WriteLine(rectangle2.GetSquare());
+
+		//Task3
+		Buss myBus = new Buss();
+		myBus.Destination = "New Yourk";
+		myBus.Number = 66;
+		myBus.DepartureTime = new DateTime(2023, 3, 10, 12, 30, 0);
+		myBus.NumberOfSeats = 16;
+
+		Console.WriteLine($"Buss number: {myBus.Number}");
+		Console.WriteLine($"Destination: {myBus.Destination}");
+		Console.WriteLine($"Departure Time: {myBus.DepartureTime}");
+		Console.WriteLine($"NumberOfSeats: {myBus.NumberOfSeats}");
 	}
 }
