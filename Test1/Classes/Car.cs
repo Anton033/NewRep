@@ -42,7 +42,7 @@ namespace Test1.Classes
 			}
 			else
 			{
-				return Weight;
+				return Weight / 2;
 			}
 		}
 	}
