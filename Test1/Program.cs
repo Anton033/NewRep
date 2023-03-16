@@ -104,7 +104,7 @@ internal class Program
 		Console.WriteLine(rectangle1.GetSquare());
 		Console.WriteLine(rectangle2.GetSquare());
 
-		//Task3
+		//Task3 //Point 1
 		Buss myBus = new Buss();
 		myBus.Destination = "New Yourk";
 		myBus.Number = 66;
@@ -116,11 +116,61 @@ internal class Program
 		Console.WriteLine($"Departure Time: {myBus.DepartureTime}");
 		Console.WriteLine($"NumberOfSeats: {myBus.NumberOfSeats}");
 
+		//Point 2
 		TrolleyBuss trolleyBuss = new TrolleyBuss();
 		Console.WriteLine(trolleyBuss.GetType());
 
 		Tram tram = new Tram();
 		Console.WriteLine(tram.GetType());
 
+		//Point 3
+		Transport[] transports = new Transport[3];
+		transports[0] = new Buss() { Destination = "New Yourk", Number = 1, DepartureTime = new DateTime(2023, 3, 14, 11, 0, 0), NumberOfSeats = 18 };
+		transports[1] = new TrolleyBuss() { Destination = "San Francisco", Number = 2, DepartureTime = new DateTime(2023, 4, 11, 14, 0, 0), NumberOfSeats = 24 };
+		transports[2] = new Tram() { Destination = "Los Angeles", Number = 3, DepartureTime = new DateTime(2023, 3, 15, 11, 0, 0), NumberOfSeats = 10 };
+
+		Array.Sort(transports, (a1, a2) => a1.NumberOfSeats.CompareTo(a2.NumberOfSeats));
+
+		Console.WriteLine("\nSort results:");
+		foreach (Transport transport in transports)
+		{
+			Console.WriteLine("Transport type: " + transport.GetType() + ", Number: " + transport.Number + ", Destination: " + transport.Destination + ", Departure Time: " + transport.DepartureTime + ", NumberOfSeats: " + transport.NumberOfSeats);
+		}
+
+		Console.WriteLine("\nEnter destination: ");
+		string searchDestination = Console.ReadLine();
+		Console.WriteLine("\nEnter departure time: ");
+		DateTime SearchTime = DateTime.Parse(Console.ReadLine());
+
+		Transport foundTransport = Array.Find(transports, a1 => a1.Destination == searchDestination && a1.DepartureTime == SearchTime);
+
+		if (foundTransport != null)
+		{
+			Console.WriteLine("The results is: " + foundTransport.GetType() + ", Number: " + foundTransport.Number + ", Destination: " + foundTransport.Destination + ", Departure Time: " + foundTransport.DepartureTime + ", NumberOfSeats: " + foundTransport.NumberOfSeats);
+		}
+		else
+		{
+			Console.WriteLine("Transport not found");
+		}
+
+		//Point 4
+		Console.WriteLine("Enter a departure time to display a list of transport departing after it:");
+		DateTime SearchTime2 = DateTime.Parse(Console.ReadLine());
+
+		Console.WriteLine("\nTransport departing after " + SearchTime2 + ":");
+
+		int i = 0;
+		foreach (Transport transport in transports)
+		{
+			if (transport.DepartureTime >= SearchTime2)
+			{
+				Console.WriteLine("Transport: " + transport.GetType() + ", Number: " + transport.Number + ", Destination: " + transport.Destination + ", Departure Time: " + transport.DepartureTime + ", NumberOfSeats: " + transport.NumberOfSeats);
+				i++;
+			}	
+		}
+		if (i == 0)
+		{
+			Console.WriteLine("No trasnport");
+		}
 	}
 }

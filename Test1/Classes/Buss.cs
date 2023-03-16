@@ -1,17 +1,22 @@
 ﻿using System;
 namespace Test1.Classes
 {
-	public class Buss
+	public abstract class Transport
 	{
 		public string Destination { get; set; }
 		public int Number { get; set; }
 		public DateTime DepartureTime { get; set; }
 		public int NumberOfSeats { get; set; }
+
+		public abstract string GetType();
 	}
 
-	public abstract class Transport
+	public class Buss : Transport
 	{
-		public abstract string GetType();
+		public override string GetType()
+		{
+			return "ICE";
+		}
 	}
 
 	public class Electric : Transport
@@ -30,14 +35,6 @@ namespace Test1.Classes
 		}
 	}
 
-	//public class ICE : Transport
-	//{
-	//	public override string GetType()
-	//	{
-	//		return "ICE";
-	//	}
-	//}
-
 	public class Tram : Rail
 	{
 	}
@@ -45,5 +42,8 @@ namespace Test1.Classes
 	public class TrolleyBuss : Electric
 	{
 	}
+
+	
+
 }
 
