@@ -1,18 +1,18 @@
 ﻿using System;
 using System.Collections;
-using System.Xml.Linq;
+using System.Text.RegularExpressions;
 
-namespace Test1.Task0.HW9
+namespace Test1.HW9.Task0
 {
 	internal class Task0
 	{
-		static void Main()
+		public static void ZeroTask()
 		{
 			ArrayList list = new ArrayList();
 
 			try
 			{
-				object s = list[18];
+				object? s = list[18];
 			}
 			catch (ArgumentOutOfRangeException ex)
 			{
