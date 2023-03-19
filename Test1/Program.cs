@@ -5,15 +5,20 @@ using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Test1.HW9.Task0;
+using Test1.HW9.Task0;
+using Test1.HW9.Task1;
 
 using System.Collections;
 using System.Text.RegularExpressions;
 
-internal class Program
+namespace Test1
 {
-	static void Main()
+	internal class Program
 	{
-		Task0.ZeroTask();
+		static void Main()
+		{
+			Task0.ZeroTask();
+			Task1.FirstTask();
+		}
 	}
 }
