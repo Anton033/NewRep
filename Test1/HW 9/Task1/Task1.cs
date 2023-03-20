@@ -49,6 +49,51 @@ namespace Test1.HW9.Task1
 			{
 				Console.WriteLine("\nThere are no product with expired date!");
 			}
+			Console.WriteLine("\n");
+
+
+			//Task 1.1
+			List<Product> products2 = new List<Product>
+			{
+				new AvailableProducts("Hleb Narochanskiy", 10, new DateTime(2023, 3, 20), new DateTime(2023, 3, 15)),
+				new AvailableProducts("Moloko Rogachevskoe", 5, new DateTime(2024, 6, 20), new DateTime(2023, 3, 15)),
+				new AvailableProducts("Tvorog 101 zerno", 13, new DateTime(2023, 3, 15), new DateTime(2023, 3, 15)),
+				new AvailableProducts("Chocolate", 15, new DateTime(2023, 9, 10), new DateTime(2023, 1, 10)),
+				new AvailableProducts("Ice Cream", 2, new DateTime(2023, 12, 31), new DateTime(2023, 2, 20)),
+				new AvailableProducts("Coca-Cola", 3, new DateTime(2024, 1, 15), new DateTime(2022, 12, 15)),
+			};
+
+			Console.WriteLine("\nNew Product List:");
+			foreach(Product product2 in products2)
+			{
+				product2.getProductInfo();
+			}
+
+			//Change the price of one product by 100
+			products2[1] = new AvailableProducts("Moloko Rogachevskoe", 105, new DateTime(2024, 6, 20), new DateTime(2023, 3, 15));
+
+			//Delete the last product.
+			products2.RemoveAt(products2.Count - 1);
+
+			Console.WriteLine("\n");
+			Console.WriteLine("New Product List after actions:");
+
+			foreach (Product product2 in products2)
+			{
+				product2.getProductInfo();
+			}
+
+			//Deleting all products
+
+			products2.Clear();
+
+			Console.WriteLine("\n");
+			Console.WriteLine("Empty???");
+
+			foreach (Product product2 in products2)
+			{
+				product2.getProductInfo();
+			}
 		}
 	}
 }

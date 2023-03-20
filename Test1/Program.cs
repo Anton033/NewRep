@@ -17,7 +17,7 @@ namespace Test1
 	{
 		static void Main()
 		{
-			//Task0.ZeroTask();
+			Task0.ZeroTask();
 			Task1.FirstTask();
 		}
 	}
