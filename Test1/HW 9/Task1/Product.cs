@@ -1,7 +1,7 @@
 ﻿using System;
 namespace Test1.HW9.Task1
 {
-	public class Product
+	public class Product : ICheckPrice
 	{
 		public string productName { get; set; }
 		public int productPrice { get; set; }
@@ -26,7 +26,26 @@ namespace Test1.HW9.Task1
 			return DateTime.Today > expDate;
 		}
 
+		public string ICheckPrice300()
+		{
+			if (productPrice > 300)
+			{
+				return "true";
+			}
+			return "false";
+		}
 
+		public void MoveElement(List<Product> one, List <Product> two)
+		{
+			foreach (var product in one.ToList())
+			{
+				if (product.ICheckPrice300().Contains("true"))
+				{
+					two.Add(product);
+					one.Remove(product);
+				}
+			}
+		}
 	}
 }
 

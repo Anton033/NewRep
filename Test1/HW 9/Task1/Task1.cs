@@ -94,6 +94,38 @@ namespace Test1.HW9.Task1
 			{
 				product2.getProductInfo();
 			}
+
+			//Task 1.2
+			List<Product> products3 = new List<Product>
+			{
+				new AvailableProducts("Hleb", 500, new DateTime(2023, 3, 20), new DateTime(2023, 3, 15)),
+				new AvailableProducts("Moloko", 100, new DateTime(2024, 6, 20), new DateTime(2023, 3, 15)),
+				new AvailableProducts("Tvorog", 300, new DateTime(2023, 3, 15), new DateTime(2023, 3, 15)),
+				new AvailableProducts("Pasta", 310, new DateTime(2023, 9, 10), new DateTime(2023, 1, 10)),
+				new AvailableProducts("Potato", 1000, new DateTime(2023, 12, 31), new DateTime(2023, 2, 20)),
+				new AvailableProducts("Sprite", 299, new DateTime(2024, 1, 15), new DateTime(2022, 12, 15)),
+			};
+
+			List<Product> productsWithHighPrice = new();
+
+			foreach (var product in products3.ToList())
+			{
+				product.MoveElement(products3, productsWithHighPrice);
+			}
+
+			Console.WriteLine("\nProduct with price < 300: ");
+
+			foreach (var product in products3.ToList())
+			{
+				product.getProductInfo();
+			}
+
+			Console.WriteLine("\nProducts with price > 300:");
+
+			foreach (var product in productsWithHighPrice)
+			{
+				product.getProductInfo();
+			}
 		}
 	}
 }
