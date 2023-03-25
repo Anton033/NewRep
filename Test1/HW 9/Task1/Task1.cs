@@ -126,6 +126,8 @@ namespace Test1.HW9.Task1
 			{
 				product.getProductInfo();
 			}
+
+			Console.WriteLine($"\nProduct with minimu price from new list: {productsWithHighPrice.Min()}");
 		}
 	}
 }

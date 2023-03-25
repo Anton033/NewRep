@@ -1,7 +1,7 @@
 ﻿using System;
 namespace Test1.HW9.Task1
 {
-	public class Product : ICheckPrice
+	public class Product : ICheckPrice, IComparable<Product>
 	{
 		public string productName { get; set; }
 		public int productPrice { get; set; }
@@ -46,6 +46,28 @@ namespace Test1.HW9.Task1
 				}
 			}
 		}
+
+		int IComparable<Product>.CompareTo(Product other)
+		{
+			if (other.productPrice > this.productPrice)
+			{
+				return -1;
+			}
+			else if (other.productPrice == this.productPrice)
+			{
+				return 0;
+			}
+			else
+			{
+				return 1;
+			}
+		}
+
+		public override string ToString()
+		{
+			return string.Format($"{productName}");
+		}
+
 	}
 }
 
