@@ -128,6 +128,45 @@ namespace Test1.HW9.Task1
 			}
 
 			Console.WriteLine($"\nProduct with minimu price from new list: {productsWithHighPrice.Min()}");
+
+
+			//Task 1.3
+			var productAvailable = new Dictionary<Product, int>()
+			{
+				[new AvailableProducts("Hleb Narochanskiy")] = 200,
+				[new AvailableProducts("Moloko Rogachevskoe")] = 150,
+				[new AvailableProducts("Tvorog 101 zerno")] = 160,
+				[new AvailableProducts("Pasta")] = 50,
+				[new AvailableProducts("Cheese")] = 35,
+				[new AvailableProducts("Sprite")] = 15,
+				[new AvailableProducts("Sausage")] = 20,
+			};
+			Console.WriteLine("\nDictionary list with pairs of Names and Values: ");
+
+			foreach (KeyValuePair<Product, int> product in productAvailable)
+			{
+				Console.WriteLine($"{product.Key}, Count = {product.Value}");
+			}
+
+			Console.WriteLine("\nDictionary list with Names only: ");
+
+			foreach (KeyValuePair<Product, int> product in productAvailable)
+			{
+				Console.WriteLine($"{product.Key}");
+			}
+
+			Console.WriteLine("\nDictionary list with Values only: ");
+
+			foreach (KeyValuePair<Product, int> product in productAvailable)
+			{
+				Console.WriteLine($"Count = {product.Value}");
+			}
+
+			Console.WriteLine("\nDictionary to List: ");
+
+			List<KeyValuePair<Product, int>> DictionaryToList = productAvailable.ToList();
+
+			Console.WriteLine(String.Join(",\n", DictionaryToList));
 		}
 	}
 }

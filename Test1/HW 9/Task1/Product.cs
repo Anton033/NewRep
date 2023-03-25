@@ -16,6 +16,15 @@ namespace Test1.HW9.Task1
 			manDate = ManDate;
 		}
 
+		public Product(string productName)
+		{
+			this.productName = productName;
+		}
+
+		public Product(string productName, int productPrice) : this(productName)
+		{
+		}
+
 		public virtual void getProductInfo()
 		{
 			Console.Write("\nProduct info: " + productName + ", " + productPrice + "$, Expiration date - " + expDate + ", Manufactured date - " + manDate);
@@ -47,7 +56,7 @@ namespace Test1.HW9.Task1
 			}
 		}
 
-		int IComparable<Product>.CompareTo(Product other)
+		int IComparable<Product>.CompareTo(Product? other)
 		{
 			if (other.productPrice > this.productPrice)
 			{
