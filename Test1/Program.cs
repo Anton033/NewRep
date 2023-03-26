@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 using Test1.HW9.Task0;
 using Test1.HW9.Task1;
+using Test1.HW10.HW10Program;
 
 using System.Collections;
 using System.Text.RegularExpressions;
@@ -17,8 +18,9 @@ namespace Test1
 	{
 		static void Main()
 		{
-			Task0.ZeroTask();
-			Task1.FirstTask();
+			//Task0.ZeroTask();
+			//Task1.FirstTask();
+			HW10Program.TaskMain();
 		}
 	}
 }
