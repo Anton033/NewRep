@@ -1,7 +1,11 @@
 ﻿using System;
+using System.Collections;
+using System.Linq;
+using System.Reflection.Emit;
+
 namespace Test1.HW10
 {
-	public class Generic<T>
+	public class Generic<T> : IEnumerable<T>, IEnumerable
 	{
 		public T[] data;
 
@@ -13,6 +17,11 @@ namespace Test1.HW10
 		public int Length
 		{
 			get { return data.Length; }
+		}
+
+		public void printArray()
+		{
+			
 		}
 
 		public void AddToArray(T item)
@@ -40,6 +49,13 @@ namespace Test1.HW10
 		public T GetArrayItem(int index)
 		{
 			return data[index];
+		}
+
+		public IEnumerator GetEnumerator() => data.GetEnumerator();
+
+		IEnumerator<T> IEnumerable<T>.GetEnumerator()
+		{
+			throw new NotImplementedException();
 		}
 	}
 }
